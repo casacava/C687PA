@@ -80,8 +80,7 @@ void Roster::parseAndAdd(const string& row)
     {
         degreeProgram = SECURITY;
     }
-    else if (degreeStr == "SOFTWARE")
-    {
+    else {
         degreeProgram = SOFTWARE;
     }
 
