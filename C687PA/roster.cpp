@@ -151,9 +151,9 @@ void Roster::printByDegreeProgram(DegreeProgram degree) const
     for (auto i = 0; i < 5; ++i)
     {
         const auto tempDegree = classRosterArray[i]->getDegreeProgram();
-        if (tempDegree == degree)
-        {
+        if (tempDegree == degree){
             classRosterArray[i]->print();
+            
         }
     }
 }

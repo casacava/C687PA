@@ -6,11 +6,10 @@
 //
 #include <string>
 #pragma once
-#ifndef degree.h
-#define degree.h
+////
 
 enum DegreeProgram {UNDECIDED, SECURITY, NETWORK, SOFTWARE };
 static const std::string DegreeProgramString[] = {"UNDECIDED", "SECURITY", "NETWORK", "SOFTWARE"};
 
-#endif /* degree_h */
+
 

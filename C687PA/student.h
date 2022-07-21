@@ -7,8 +7,7 @@
 #pragma once
 #include "degree.h"
 #include <string>
-#ifndef student.h
-#define student.h
+
 
 using namespace std;
 
@@ -57,4 +56,3 @@ public:
 
 };
 
-#endif /* student_h */

@@ -7,8 +7,7 @@
 #include <string>
 #include <array>
 #include "student.h"
-#ifndef roster//.h
-#define roster.h
+
 
 class Roster {
 public:
@@ -41,4 +40,4 @@ public:
     ~Roster();
 };
 
-#endif /* roster_h */
+
