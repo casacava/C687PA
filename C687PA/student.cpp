@@ -7,18 +7,10 @@
 
 #include "student.h"
 #include <string>
-#include <cstring>
+#include <iostream>
 
-//Student {
-//public:
-//    int studentID;
-//    std::string firstName;
-//    std::string LastName;
-//    std::string emailaddress;
-//    int age;
-//    int numDaysComplete;
-//    std::string degree;
-//};
+using namespace std;
+
 
 
 
