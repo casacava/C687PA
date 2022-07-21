@@ -12,5 +12,7 @@
 using namespace std;
 
 
-
+string Student::getstudentID() const {
+    return studentID
+}
 
