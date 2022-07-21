@@ -5,8 +5,9 @@
 //  Created by Cass on 7/19/22.
 //
 #include <string>
-#ifndef roster_h
-#define roster_h
+#include “student.h”
+#ifndef roster.h
+#define roster.h
 
 
 #endif /* roster_h */

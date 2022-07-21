@@ -8,7 +8,7 @@
 #ifndef degree_h
 #define degree_h
 
-enum class CourseTYpe {SECURITY, NETWORK, SOFTWARE };
+enum class CourseType {SECURITY, NETWORK, SOFTWARE };
 string courseTypeStrings[] = {"SECURITY", "NETWORK", "SOFTWARE"};
 
 #endif /* degree_h */
