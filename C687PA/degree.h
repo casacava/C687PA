@@ -5,11 +5,12 @@
 //  Created by Cass on 7/19/22.
 //
 #include <string>
-#ifndef degree_h
-#define degree_h
+#pragma once
+#ifndef degree.h
+#define degree.h
 
-enum class CourseType {SECURITY, NETWORK, SOFTWARE };
-string courseTypeStrings[] = {"SECURITY", "NETWORK", "SOFTWARE"};
+enum DegreeProgram {UNDECIDED, SECURITY, NETWORK, SOFTWARE };
+static const std::string DegreeProgramString[] = {"UNDECIDED", "SECURITY", "NETWORK", "SOFTWARE"};
 
 #endif /* degree_h */
 

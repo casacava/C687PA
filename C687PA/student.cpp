@@ -8,77 +8,72 @@
 #include "student.h"
 #include <string>
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
 
-string Student::getstudentID() const {
-    return studentID;
+Student::Student()
+{
+    this->studentID = "";
+    this->firstName = "";
+    this->lastName = "";
+    this->emailAddress = "";
+    this->age = 0;
+    for (auto& courseDay : this->courseDays) courseDay = 0;
+    this->degreeProgram = UNDECIDED;
 }
 
-string Student::getfirstName() const {
-    return firstName;
-}
-
-string Student::getlastName() const {
-    return lastName;
-}
-
-string Student::getemailAddress()() const {
-    return emailaddress;
-}
-
-int Student::getage() const {
-    return age;
-}
-
-int *Student::getnumDays3Courses()() {
-    return numDays3Courses;
-}
-
-
-void Student::setstudentID(string studentID) {
-    this->studentID = studentID;
-}
-
-void Student::setfirstName(string firstName) {
-    this->firstName = firstName;
-}
-
-void Student::setlastName(string lastName) {
-    this->lastName = lastName;
-}
-
-void Student::setemailaddress(<#string emailaddress#>) {
-    this->emailaddress = emailaddress;
-}
-
-void Student::setage(int age) {
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int courseDays[],
+                 DegreeProgram degreeProgram)
+{
+    this->studentID = std::move(studentID);
+    this->firstName = std::move(firstName);
+    this->lastName = std::move(lastName);
+    this->emailAddress = std::move(emailAddress);
     this->age = age;
+    for (auto i = 0; i < courseDaysArraySize; ++i) this->courseDays[i] = courseDays[i];
+    this->degreeProgram = degreeProgram;
 }
 
-void Student::setnumDays3Courses(int day0, int day1, int day2) {
-    Student::numDays3Courses[0] = day0;
-    Student::numDays3Courses[1] = day1;
-    Student::numDays3Courses[2] = day2;
+Student::~Student()
+= default;
+
+string Student::getStudentID() const { return this->studentID; }
+string Student::getFirstName() const { return this->firstName; }
+string Student::getLastName() const { return this->lastName; }
+string Student::getEmailAddress() const { return this->emailAddress; }
+int Student::getAge() const { return this->age; }
+int* Student::getCourseDays() { return this->courseDays; }
+DegreeProgram Student::getDegreeProgram() const { return this->degreeProgram; }
+
+void Student::setStudentID(string studentID) { this->studentID = std::move(studentID); }
+void Student::setFirstName(string firstName) { this->firstName = std::move(firstName); }
+void Student::setLastName(string lastName) { this->lastName = std::move(lastName); }
+void Student::setEmailAddress(string emailAddress) { this->emailAddress = std::move(emailAddress); }
+void Student::setAge(int age) { this->age = age; }
+
+void Student::setCourseDays(int courseDays[])
+{
+    for (auto i = 0; i < courseDaysArraySize; i++) this->courseDays[i] = courseDays[i];
 }
 
-void Student::setDegree(Degree degree) {
-    this->degree = degree;
+void Student::setDegreeProgram(DegreeProgram degreeProgram) { this->degreeProgram = degreeProgram; }
+
+void Student::printHeader()
+{
+    cout << "Output format: Student ID|First Name|Last Name|Email Address|Age|Course Days|Degree Program" << '\t';
 }
 
-
-Student::Student(string studentID, string firstName, string lastName, string emailaddress, int age, int* numDays3Courses, Degree degree) {
-    this->studentID = studentID;
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->emailaddress = emailaddress;
-    this->age = age;
-    this->numDays3Courses[0] = numDays3Courses[0];
-    this->numDays3Courses[1] = numDays3Courses[1];
-    this->numDays3Courses[2] = numDays3Courses[2];
+void Student::print()
+{
+    cout << this->getStudentID() << '\t';
+    cout << this->getFirstName() << '\t';
+    cout << this->getLastName() << '\t';
+    cout << this->getEmailAddress() << '\t';
+    cout << this->getAge() << '\t';
+    cout << this->getCourseDays()[0] << '\t';
+    cout << this->getCourseDays()[1] << '\t';
+    cout << this->getCourseDays()[2] << '\t';
+    cout << DegreeProgramString[this->getDegreeProgram()] << '\t';
 }
-
-
-void Student::print() {}
-Student::~Student() {}
